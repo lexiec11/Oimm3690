@@ -10,4 +10,4 @@ This is my course repository for OIM3690.
 - Time: 11:30-1:00
 
 ## Links
-- [My Portfolio](https://username.github.io)
+- [My Portfolio](https://lexiecol11.github.io)
