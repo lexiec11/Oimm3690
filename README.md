@@ -8,7 +8,7 @@ This is my course repository for OIM3690.
 - Name: Lexie Collier
 ## About this class
 - Time: 11:30-1:00
-
+- 
 
 ## Links
 - [My Portfolio](https://lexiec11.github.io)
