@@ -1,5 +1,5 @@
 # oim3690
-course work for OIM3690
+course work for oim3690
 # oim3690 - Web Development
 
 This is my course repository for oim3690.
