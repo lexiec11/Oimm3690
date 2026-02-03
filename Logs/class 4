@@ -1,12 +1,19 @@
-## Class 4
+## Class 5
 
 
 ## What i Learnd
-- Learned how to use our OIM GitHub as a playground for building our website
-Installed Live Server to see changes in real time
-- Used live updates to easily find errors and bugs
-- Learned to use the preview option to view updates on the website while editing
+
 
 ## what i did
-- improved website using loveable 
-- added a different vibe and asthetic
+- saw everyones websites on the OIM3690 Gallery 
+- learned the difference between GET and POST :
+this is what chat gave me:
+Ask for data (GET) = “Please show me something”
+Example: opening a website page
+Your browser asks the server: “Can I see this page?”
+Send data (POST) = “Here is some information for you”
+Example: submitting a form
+Your browser sends the server info like your name, email, or password
+Tiny example:
+Click a link → GET
+Click “Submit” on a form → POST
