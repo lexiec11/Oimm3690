@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>About Me</title>
+	<style>
+		:root { --accent: #ff99cc; }
+		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 2rem; background:#fffafc; color:#222; }
+		header { display:flex; align-items:center; gap:1rem; }
+		.badge { width:64px; height:64px; border-radius:50%; background:var(--accent); display:inline-flex; align-items:center; justify-content:center; color:#fff; font-weight:700; }
+		h1 { margin:0; color:#d6336c; }
+		.section { margin-top:1.25rem; }
+		.fave { color:var(--accent); font-weight:600; }
+		ul { margin:0.5rem 0 0 1.2rem; }
+	</style>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>About Me</title>
+	<style>
+		body { font-family: sans-serif; margin: 20px; background: #fffafc; color: #222; }
+		header { display:flex; align-items:center; gap:1rem; }
+		.badge { width:48px; height:48px; border-radius:50%; background:#ff99cc; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-weight:700; }
+		nav a { color:#c2185b; text-decoration:none; margin:0 6px; }
+		main { margin-top: 16px; }
+		section { margin-top: 12px; }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="badge">LC</div>
+		<div>
+			<h1 id="top">About Me</h1>
+			<p>Hi I'm Lexie. Welcome to my about me page.</p>
+		</div>
+		<nav aria-label="Main navigation">
+			<a href="#top">Home</a> |
+			<a href="#favourites">Favourites</a> |
+			<a href="#about">About</a>
+		</nav>
+	</header>
+
+	<main>
+		<section id="favourites" aria-labelledby="favourites-heading">
+			<h2 id="favourites-heading">Favourites</h2>
+			<p>My favourite colour is <strong>pink</strong>.</p>
+			<p>My favourite animals are:</p>
+			<ul>
+				<li>My dogs</li>
+				<li>Lions</li>
+				<li>Meerkats</li>
+				<li>Cats</li>
+			</ul>
+		</section>
+
+		<section id="about" aria-labelledby="about-heading">
+			<h2 id="about-heading">About Me</h2>
+			<p>I love travelling! and my favorite music artist is Rhianna</p>
+		</section>
+	</main>
+
+	<section id="media" aria-labelledby="media-heading">
+		<h2 id="media-heading">Listen</h2>
+		<p>Play audio from a YouTube video below (replace <code>VIDEO_ID</code> with the video's ID):</p>
+		<div>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/HjBo--1n8lI?si=k7QRf5GUX0FYgE9i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<p><small>Note: browsers may block autoplay; press play to hear audio.</small></p>
+	</section>
+</body>
+</html>

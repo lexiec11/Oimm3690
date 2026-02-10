@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HTML Basics Demo — Session 7</title>
+    <style>
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding:24px; line-height:1.45; max-width:900px; margin:auto; }
+        header, nav, main, footer, section, article { border:1px solid #eee; padding:12px; margin:12px 0; border-radius:6px; background:#fafafa; }
+        code { background:#f4f4f4; padding:2px 6px; border-radius:4px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace; }
+        img { max-width:100%; height:auto; display:block; margin:8px 0; }
+        table { border-collapse:collapse; width:100%; }
+        th, td { border:1px solid #ddd; padding:8px; text-align:left; }
+        nav a { margin-right:8px; }
+        form label { display:block; margin-top:8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Basic Elements Demo (Session 7)</h1>
+        <p>Examples of common HTML tags and elements. Save and open this file in your browser to try them.</p>
+    </header>
+
+    <nav>
+        <a href="#headings-lines">Headings & Lines</a> |
+        <a href="#text">Text</a> |
+        <a href="#lists">Lists</a> |
+        <a href="#links">Links</a> |
+        <a href="#media">Media</a> |
+        <a href="#forms">Forms</a> |
+        <a href="#table">Table</a> |
+        <a href="#code">Code</a>
+    </nav>
+
+    <main>
+        <section id="headings-lines">
+            <h2>All heading levels</h2>
+
+            <h1>Heading 1 — &lt;h1&gt;</h1>
+            <h2>Heading 2 — &lt;h2&gt;</h2>
+            <h3>Heading 3 — &lt;h3&gt;</h3>
+            <h4>Heading 4 — &lt;h4&gt;</h4>
+            <h5>Heading 5 — &lt;h5&gt;</h5>
+            <h6>Heading 6 — &lt;h6&gt;</h6>
+
+            <hr />
+
+            <h3>Line break example</h3>
+            <p>First line<br />Second line (using &lt;br&gt;)</p>
+
+            <h3>Horizontal rule example</h3>
+            <p>The line above is created with &lt;hr&gt; (a thematic break).</p>
+        </section>
+
+        <section id="text">
+            <h2>Headings & Text</h2>
+            <p>This is a paragraph (<code>&lt;p&gt;</code>). Use <strong>&lt;strong&gt;</strong> for important text and <em>&lt;em&gt;</em> for emphasis.</p>
+            <p>Inline grouping: <span style="color:teal">a <code>&lt;span&gt;</code> for small inline blocks</span>.</p>
+            <p>Block-level grouping: <div style="display:inline-block;background:#fff3cd;padding:4px;border-radius:4px;">a <code>&lt;div&gt;</code> is a block container</div></p>
+        </section>
+
+        <section id="lists">
+            <h2>Lists</h2>
+            <h3>Unordered list</h3>
+            <ul>
+                <li>Item one</li>
+                <li>Item two with a nested list
+                    <ol>
+                        <li>Ordered nested item A</li>
+                        <li>Ordered nested item B</li>
+                    </ol>
+                </li>
+                <li>Item three</li>
+            </ul>
+
+            <h3>Definition list</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+            </dl>
+        </section>
+
+        <section id="links">
+            <h2>Links & Navigation</h2>
+            <p><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">External link to MDN</a></p>
+            <p><a href="#text">Internal link to the Text section</a></p>
+            <p><a href="mailto:you@example.com">Email link (mailto)</a></p>
+        </section>
+
+        <section id="media">
+            <h2>Images & Media</h2>
+            <figure>
+                <img src="https://via.placeholder.com/600x150.png?text=Demo+Image" alt="Demo placeholder" />
+                <figcaption>Figure with <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code>.</figcaption>
+            </figure>
+
+            <h3>Audio & Video</h3>
+            <audio controls>
+                <source src="#" type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
+
+            <video controls width="320" style="display:block;margin-top:8px;">
+                <source src="#" type="video/mp4" />
+                Your browser does not support the video element.
+            </video>
+        </section>
+
+        <section id="forms">
+            <h2>Form controls</h2>
+            <form action="#" method="get">
+                <label for="name">Name:</label>
+                <input id="name" name="name" type="text" placeholder="Enter your name" />
+
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+
+                <label>Choose a color:</label>
+                <input id="red" name="color" type="radio" value="red" /><label for="red" style="display:inline"> Red</label>
+                <input id="blue" name="color" type="radio" value="blue" /><label for="blue" style="display:inline"> Blue</label>
+
+                <label><input type="checkbox" name="subscribe" /> Subscribe to newsletter</label>
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="">Select</option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                </select>
+
+                <label for="notes">Notes</label>
+                <textarea id="notes" name="notes" rows="4" cols="40" placeholder="Optional notes"></textarea>
+
+                <div style="margin-top:10px;">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="table">
+            <h2>Table</h2>
+            <table>
+                <caption>Simple table example</caption>
+                <thead>
+                    <tr><th>Item</th><th>Qty</th><th>Price</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Apple</td><td>3</td><td>$1.50</td></tr>
+                    <tr><td>Banana</td><td>5</td><td>$2.00</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td colspan="2">Total</td><td>$3.50</td></tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="code">
+            <h2>Code & Preformatted</h2>
+            <p>Inline code: <code>&lt;div&gt;</code></p>
+            <pre><code>&lt;!-- preformatted block preserves whitespace --&gt;
+&lt;h1&gt;Hello&lt;/h1&gt;
+&lt;p&gt;This is preformatted text.&lt;/p&gt;</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Footer (<code>&lt;footer&gt;</code>) — small site info. &copy; Session 7</p>
+    </footer>
+</body>
+</html>
