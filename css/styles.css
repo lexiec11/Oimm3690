@@ -1,8 +1,13 @@
 /* Basic site styles added for session pages */
 :root{
+  /* default color variables (can be overridden by theme classes) */
   --accent: #ff99cc;
   --bg: #fffafc;
   --text: #222;
+  --muted: #666;
+  --heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --body-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --h1-size: 2rem;
 }
 html,body{height:100%;}
 body{
@@ -29,3 +34,28 @@ nav a{color:#c2185b;text-decoration:none;margin:0 0.5rem}
 section{margin-top:1.25rem}
 audio{margin-top:0.5rem;display:block}
 .youtube-player{border-radius:8px;overflow:hidden}
+
+/* Theme variants */
+.theme-pastel{--accent:#ff99cc;--bg:#fffafc;--text:#222;}
+.theme-dark{--accent:#6ee7b7;--bg:#0f172a;--text:#e6eef6;--muted:#9aa7bf}
+.theme-modern{--accent:#0ea5e9;--bg:#ffffff;--text:#0b1220;--muted:#6b7280}
+
+/* Font stacks */
+.font-sans{--heading-font:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--body-font:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+.font-serif{--heading-font: Georgia, 'Times New Roman', Times, serif;--body-font: Georgia, 'Times New Roman', Times, serif}
+.font-display{--heading-font: 'Trebuchet MS', 'Lucida Grande', 'Segoe UI', sans-serif;--body-font: system-ui, -apple-system, 'Segoe UI', Roboto}
+
+/* Sizes */
+.size-sm{--h1-size:1.5rem}
+.size-md{--h1-size:2rem}
+.size-lg{--h1-size:2.8rem}
+
+/* Apply variables */
+body{font-family:var(--body-font)}
+h1{font-family:var(--heading-font);font-size:var(--h1-size);color:var(--accent)}
+p,li,small{color:var(--text)}
+small{color:var(--muted)}
+
+/* Controls */
+.controls{display:flex;gap:0.5rem;align-items:center;margin-top:0.75rem}
+.controls select{padding:0.35rem;border-radius:6px;border:1px solid #ddd}

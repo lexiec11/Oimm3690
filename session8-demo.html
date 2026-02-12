@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hi</title>
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/s08.css">
 	<style>
 		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 2rem; background: #fffafc; color:#222 }
 		header { display:flex; align-items:center; gap:1rem }
@@ -13,7 +13,33 @@
 </head>
 <body>
 	<header>
-		<h1>This is a demo page</h1>
+		<div>
+			<h1 id="page-title">This is a demo page</h1>
+
+			<div class="controls" aria-hidden="false">
+				<label for="theme-select">Theme:</label>
+				<select id="theme-select">
+					<option value="">Default</option>
+					<option value="theme-pastel">Pastel</option>
+					<option value="theme-dark">Dark</option>
+					<option value="theme-modern">Modern</option>
+				</select>
+
+				<label for="font-select">Font:</label>
+				<select id="font-select">
+					<option value="">Sans</option>
+					<option value="font-serif">Serif</option>
+					<option value="font-display">Display</option>
+				</select>
+
+				<label for="size-select">Size:</label>
+				<select id="size-select">
+					<option value="size-md">Medium</option>
+					<option value="size-sm">Small</option>
+					<option value="size-lg">Large</option>
+				</select>
+			</div>
+		</div>
 	</header>
 
 	<main>
@@ -44,3 +70,25 @@
 
 </body>
 </html>
+
+	<script>
+	// Theme/font/size controls for session8-demo.html
+	(function(){
+		const body = document.body;
+		const themeSelect = document.getElementById('theme-select');
+		const fontSelect = document.getElementById('font-select');
+		const sizeSelect = document.getElementById('size-select');
+
+		function apply(){
+			body.classList.remove('theme-pastel','theme-dark','theme-modern','font-sans','font-serif','font-display','size-sm','size-md','size-lg');
+			if(themeSelect && themeSelect.value) body.classList.add(themeSelect.value);
+			if(fontSelect && fontSelect.value) body.classList.add(fontSelect.value);
+			if(sizeSelect && sizeSelect.value) body.classList.add(sizeSelect.value);
+		}
+
+		[themeSelect,fontSelect,sizeSelect].forEach(s=>{ if(s) s.addEventListener('change',apply) });
+		// set defaults
+		if(sizeSelect) sizeSelect.value = 'size-md';
+		apply();
+	})();
+	</script>
