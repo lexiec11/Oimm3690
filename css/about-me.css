@@ -1,0 +1,10 @@
+/* Styles specific to about-me page — sets preferred body font */
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  padding: 2rem;
+}
+
+/* Page heading color */
+h1{
+  color: #d6336c;
+}
