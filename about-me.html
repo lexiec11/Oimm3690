@@ -64,11 +64,92 @@
 
 	<section id="media" aria-labelledby="media-heading">
 		<h2 id="media-heading">Listen</h2>
-		<p>Play audio from a YouTube video below (replace <code>VIDEO_ID</code> with the video's ID):</p>
-		<div>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/HjBo--1n8lI?si=k7QRf5GUX0FYgE9i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<p>Click the thumbnail to load the YouTube player (works even if embeds are blocked).</p>
+		<div style="max-width:720px;margin:0 auto;">
+			<div class="youtube-player" data-id="HjBo--1n8lI" style="position:relative;padding-top:56.25%;overflow:hidden;cursor:pointer;background:#000;border-radius:8px;">
+				<!-- thumbnail + play button injected by JS -->
+			</div>
+			<noscript>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/HjBo--1n8lI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</noscript>
 		</div>
+
+		<h3>Local audio</h3>
+		<p>Play the local audio file below (controls supported in modern browsers):</p>
+		<audio controls>
+			<source src="audio/Rihannas%20FULL%20Apple%20Music%20Super%20Bowl%20LVII%20Halftime%20Show.mp3" type="audio/mpeg">
+			Your browser does not support the audio element. <a href="audio/Rihannas%20FULL%20Apple%20Music%20Super%20Bowl%20LVII%20Halftime%20Show.mp3">Download the file</a>.
+		</audio>
 		<p><small>Note: browsers may block autoplay; press play to hear audio.</small></p>
+
+		<script>
+		// Lazy-load YouTube iframe: show thumbnail + play overlay, replace with iframe on click
+		(function(){
+			function createPlayer(div){
+				var id = div.dataset.id;
+				var thumb = 'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg';
+				var img = document.createElement('img');
+				img.src = thumb;
+				img.alt = 'YouTube thumbnail';
+				img.style.width = '100%';
+				img.style.height = '100%';
+				img.style.objectFit = 'cover';
+				img.loading = 'lazy';
+
+				var wrapper = document.createElement('div');
+				wrapper.style.position = 'absolute';
+				wrapper.style.top = '0';
+				wrapper.style.left = '0';
+				wrapper.style.width = '100%';
+				wrapper.style.height = '100%';
+				wrapper.style.display = 'flex';
+				wrapper.style.alignItems = 'center';
+				wrapper.style.justifyContent = 'center';
+
+				var btn = document.createElement('button');
+				btn.setAttribute('aria-label','Play video');
+				btn.style.width = '84px';
+				btn.style.height = '84px';
+				btn.style.border = '0';
+				btn.style.borderRadius = '50%';
+				btn.style.background = 'rgba(0,0,0,0.6)';
+				btn.style.display = 'flex';
+				btn.style.alignItems = 'center';
+				btn.style.justifyContent = 'center';
+				btn.style.cursor = 'pointer';
+
+				var tri = document.createElement('div');
+				tri.style.width = '0';
+				tri.style.height = '0';
+				tri.style.borderLeft = '18px solid #fff';
+				tri.style.borderTop = '12px solid transparent';
+				tri.style.borderBottom = '12px solid transparent';
+
+				btn.appendChild(tri);
+				wrapper.appendChild(btn);
+
+				div.appendChild(img);
+				div.appendChild(wrapper);
+
+				div.addEventListener('click', function(){
+					var iframe = document.createElement('iframe');
+					iframe.setAttribute('src','https://www.youtube-nocookie.com/embed/'+id+'?rel=0&showinfo=0&autoplay=1');
+					iframe.setAttribute('frameborder','0');
+					iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+					iframe.setAttribute('allowfullscreen','');
+					iframe.style.width = '100%';
+					iframe.style.height = '100%';
+					div.innerHTML = '';
+					div.appendChild(iframe);
+				});
+			}
+
+			document.addEventListener('DOMContentLoaded', function(){
+				var players = document.getElementsByClassName('youtube-player');
+				for(var i=0;i<players.length;i++) createPlayer(players[i]);
+			});
+		})();
+		</script>
 	</section>
 </body>
 </html>
